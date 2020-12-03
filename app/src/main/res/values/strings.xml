@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">CurrencyConverter</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string-array name="currencies">
+        <item>EUR</item>
+        <item>USD</item>
+        <item>GBP</item>
+        <item>DKK</item>
+        <item>SEK</item>
+        <item>AUD</item>
+        <item>ZAR</item>
+        <item>CZK</item>
+        <item>NOK</item>
+        <item>INR</item>
+        <item>UGX</item>
+    </string-array>
+    <string-array name="currencies2">
+        <item>DKK</item>
+        <item>USD</item>
+        <item>GBP</item>
+        <item>SEK</item>
+        <item>AUD</item>
+        <item>ZAR</item>
+        <item>KES</item>
+        <item>NOK</item>
+        <item>TZS</item>
+        <item>UGX</item>
+        <item>EUR</item>
+    </string-array>
 </resources>
