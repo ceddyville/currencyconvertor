@@ -16,9 +16,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
-//import com.google.gson.JsonElement;
-//import com.google.gson.JsonObject;
-
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 RetrofitInterface retrofitInterface = RetrofitBuilder.getRetrofitInstance().create(RetrofitInterface.class);
                 Call<JsonObject> call = retrofitInterface.getExchangeCurrency(firstSpinner.getSelectedItem().toString());
-                Call<JsonObject> call2 = retrofitInterface.getExchangeCurrency(secondSpinner.getSelectedItem().toString());
+
                 call.enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
@@ -71,31 +69,15 @@ public class MainActivity extends AppCompatActivity {
                         JsonObject rates = res.getAsJsonObject("conversion_rates");
                         double currency = Double.valueOf(currencyOriginal.getText().toString());
                         double multiplier = Double.valueOf(String.valueOf(rates.get(secondSpinner.getSelectedItem().toString())));
-                        double result = Math.round((currency * multiplier)*100);
+                        double result =(double) Math.round((currency * multiplier)*100)/100;
                         currencyConverted.setText(String.valueOf(result));
                     }
-
                     @Override
                     public void onFailure(Call<JsonObject> call, Throwable t) {
 
                     }
                 });
-                /*call2.enqueue(new Callback<JsonObject>() {
-                    @Override
-                    public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                        JsonObject res = response.body();
-                        JsonObject rates = res.getAsJsonObject("conversion_rates");
-                        double currency2 = Double.parseDouble(currencyConverted.getText().toString());
-                        double multiplier2 = Double.valueOf(String.valueOf(rates.get(firstSpinner.getSelectedItem().toString())));
-                        double result = currency2 * multiplier2;
-                        currencyConverted.setText(String.valueOf(result));
-                    }
 
-                    @Override
-                    public void onFailure(Call<JsonObject> call, Throwable t) {
-
-                    }
-                });*/
             }
         });
     }
