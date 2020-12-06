@@ -13,19 +13,19 @@
         <item>CZK</item>
         <item>NOK</item>
         <item>INR</item>
-        <item>UGX</item>
+        <item>CHF</item>
     </string-array>
     <string-array name="currencies2">
-        <item>DKK</item>
         <item>USD</item>
         <item>GBP</item>
+        <item>DKK</item>
         <item>SEK</item>
         <item>AUD</item>
         <item>ZAR</item>
-        <item>KES</item>
+        <item>CZK</item>
         <item>NOK</item>
-        <item>TZS</item>
-        <item>UGX</item>
+        <item>INR</item>
+        <item>CHF</item>
         <item>EUR</item>
     </string-array>
 </resources>
